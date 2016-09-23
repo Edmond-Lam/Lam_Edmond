@@ -1,24 +1,30 @@
-from flask import Flask
+from flask import Flask, render_template
+import Divine
 #python can be object oriented
 
 app = Flask(__name__)
 #creates instance of Flask and passes env variable __name__
 
+
+prob = Divine.calc()
+
+print prob
+
 @app.route("/")
-def hello_world():
+def mainpage():
     return '''<html>
               <head>
-              <title>Grovyle!!!</title>
+              <title>Edmond's Homepage</title>
               </head>
               <body>
               <a href="http://127.0.0.1:5000/Grovyle!">Grovyle!</a><br>
-              <a href="http://127.0.0.1:5000/car">Car</a><br>
+              <a href="http://127.0.0.1:5000/occupations">Occupations</a><br>
               </body>
               </html> '''
 
 @app.route("/Grovyle!")
-def hello_world2():
-    return '''<html>
+def grovyle():
+    return Divine.calc() + '''<html>
               <head>
               <title>Grovyle!!!</title>
               </head>
@@ -27,17 +33,13 @@ def hello_world2():
               <a href="http://127.0.0.1:5000/">back</a>
               </body>
               </html> '''
-@app.route("/car")
-def hello_world3():
-    return  '''<html>
-              <head>
-              <title>Great News!</title>
-              </head>
-              <body>
-              <font size=20px><b>Great News! - James May</b></font><br>
-              <img src="http://127.0.0.1:5000/Sandero.jpeg" alt="Great News! - James May">
-              <a href="http://127.0.0.1:5000/">back</a>
-              </body>
-              </html> '''
-if(__name__ == "__main__"):
+
+@app.route("/occupations")
+
+def test_tmplt():
+    return render_template("basic.html", GROVYLE = "Job Occupations", fool = prob, SCEPTILE = Divine.randOcc(Divine.calc()))
+            
+
+if __name__ == "__main__":
+    app.debug = True
     app.run()
