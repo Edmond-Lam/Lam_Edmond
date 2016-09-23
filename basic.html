@@ -18,13 +18,20 @@
       <b><u><center>Job Occupations Data</center></u></b>
       <br>
     </font>
+    <center>
+      <font face="Tahoma" size="5px" color="black">
+      <b><center>Here are the percentages of the population for jobs that you can potentially take.</center></u></b>
+      <br>
+      <br>
+      </font>
+    </center>
     <table border = "3" align = "center" cellpadding = "10"     cellborder = "10" style = "width:50%">
       <tr>
 	<th>
-	  <b><font face="Verdana" size="2px">Job Class</font></b>
+	  <b><font face="Verdana" size="3px">Job Class</font></b>
 	</th>
 	<th>
-	  <b><font face="Verdana" size="2px">Percentage</font></b>
+	  <b><font face="Verdana" size="3px">Percentage</font></b>
 	</th>
       </tr>
       {% for key, value in fool.iteritems() %}
@@ -36,8 +43,21 @@
     </table>
     <br>
     <br>
-    <center><font face="Tahoma" size="4px" color="black"><b> {{ SCEPTILE  }} </b></font></center>
-
+    <center>
+      <font face="Tahoma" size="4px" color="black">
+	<u>
+	  <b>
+	    Randomly Generated Job Based on Percentages:
+	  </b>
+	</u>
+	<b>
+	  {{ SCEPTILE  }}
+	</b>
+      </font>
+    </center>
+     <br>
+     <br>
+     <br>
   </body>
 
 </html>

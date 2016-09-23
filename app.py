@@ -8,8 +8,6 @@ app = Flask(__name__)
 
 prob = Divine.calc()
 
-print prob
-
 @app.route("/")
 def mainpage():
     return '''<html>
@@ -20,11 +18,12 @@ def mainpage():
               <a href="http://127.0.0.1:5000/Grovyle!">Grovyle!</a><br>
               <a href="http://127.0.0.1:5000/occupations">Occupations</a><br>
               </body>
-              </html> '''
+              </html>
+              '''
 
 @app.route("/Grovyle!")
 def grovyle():
-    return Divine.calc() + '''<html>
+    return '''<html>
               <head>
               <title>Grovyle!!!</title>
               </head>
@@ -35,7 +34,6 @@ def grovyle():
               </html> '''
 
 @app.route("/occupations")
-
 def test_tmplt():
     return render_template("basic.html", GROVYLE = "Job Occupations", fool = prob, SCEPTILE = Divine.randOcc(Divine.calc()))
             
