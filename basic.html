@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+  
+  <head><link rel="shortcut icon" href="/pokeball.ico" type="favicon/ico">
+    <title> {{ GROVYLE }} </title>
+    <style>body{background-color: gray;background-repeat: no-repeat;background-position:left;}</style> 
+    <style>p{margin: 20px 300px;}</style>
+    <style>table, td, th{border: 1px solid black;}</style>
+    <style>table{background-color: black;}</style>
+    <style>td{background-color: white;}</style>
+    <style>th{background-color: white;}</style>
+
+  </head>
+
+  <body>
+    <font face="Tahoma" size="8px" color="maroon">
+      <b><u><center>Job Occupations Data</center></u></b>
+      <br>
+    </font>
+    <table border = "3" align = "center" cellpadding = "10"     cellborder = "10" style = "width:50%">
+      <tr>
+	<th>
+	  <b><font face="Verdana" size="2px">Job Class</font></b>
+	</th>
+	<th>
+	  <b><font face="Verdana" size="2px">Percentage</font></b>
+	</th>
+      </tr>
+      {% for key, value in fool.iteritems() %}
+      <tr>
+        <td><font face="Tahoma"> {{ key }} </font></td>
+        <td><font face="Tahoma"> {{ value }} </font> </td>
+      </tr>
+      {% endfor %}
+    </table>
+    <br>
+    <br>
+    <center><font face="Tahoma" size="4px" color="black"><b> {{ SCEPTILE  }} </b></font></center>
+
+  </body>
+
+</html>
