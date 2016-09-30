@@ -1,0 +1,111 @@
+
+body{
+	background-color: #6C91C2;
+	background-position:left;
+}
+
+p[class=titles]{
+	margins: 50px 300px;
+	font-family: 'Abel', sans-serif;
+}
+
+bodyp{
+	font-family: 'Yanone Kaffeesatz',sans-serif;
+	font-size: 25px
+}
+
+bodyp[class=paragraph]{
+	font-family: 'Cuprum',sans-serif;
+	font-size: 25px
+}
+
+button[class=login]:hover {
+  transition-property: background-color, color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+  color: white;
+  font-family: "Quicksand",  sans-serif;
+  font-weight: bold;
+  border: 7px #FFFFFF;
+  border-radius: 50px;
+  background: gray;
+  padding: 10px;
+  font-size: 20px;
+}
+
+button[class=login] {
+  transition-property: background-color, color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+  color: lightblue;
+  font-family: "Quicksand",  sans-serif;
+  font-weight: bold;
+  border: 7px #FFFFFF;
+  border-radius: 50px;
+  background: darkcyan;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+button[class=login]:focus {
+    outline: none !important;
+}
+
+input[class=login2]:hover {
+  transition-property: background-color, color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+  color: white;
+  font-family: "Quicksand",  sans-serif;
+  font-weight: bold;
+  border: 7px #FFFFFF;
+  border-radius: 50px;
+  background: gray;
+  padding: 6px;
+  font-size: 10px;
+}
+
+input[class=login2] {
+  transition-property: background-color, color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+  color: lightblue;
+  font-family: "Quicksand",  sans-serif;
+  font-weight: bold;
+  border: 7px #FFFFFF;
+  border-radius: 50px;
+  background: darkcyan;
+  padding: 6px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+input[class=login2]:focus {
+    outline: none !important;
+}
+
+input[class=forms]{
+	border-radius: 50px;
+	height: 24px;
+    width: 200px;
+	padding: 5px;
+	margin: 5px;
+	font-family: "Gudea", sans-serif;
+}
+
+input[class=forms]:focus {
+    transition-property: background, border;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    border: 2px solid gray;
+    background: #FFFFFF;
+	margin: 5px;
+    outline: none !important;
+}
+
+table, td, tr{
+	border: 0px;
+	border-radius: 15px;
+}
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+<link rel="shortcut icon" href="static/pokeball.ico" type="favicon/ico" />
+<style>body{background-color: gray;background-repeat: no-repeat;background-position:left;}</style> 
+<head>
+<title> {{ VARIABLE }}</title>
+</head>
+<body>
+<center>
+<font face="Trebuchet MS" size="8px" color="maroon">
+<b><u> {{ TITLE }} </u></b>
+<br>
+</font>
+</center>
+  <br><br>
+<center>
+  <form id="loginform" name="input" action="/auth" method="POST">
+    <br>
+    <font face="Century Gothic" size="4px">Username:</font> <input type="text" name="username">
+    <br>
+    <font face="Century Gothic" size="4px">Password:</font> <input type="text" name="password">
+    <br>
+    <input type="submit" name="Submit">
+  </form>
+</center>
+</body>
+</html>
