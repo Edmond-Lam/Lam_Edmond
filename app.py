@@ -16,7 +16,7 @@ def mainpage():
     print ":::DIAG::: this request.headers"
     print request.headers
     print ":::DIAG::: this request.method"
-    print request.method
+    print request.method 
     print ":::DIAG::: this request.args"
     print request.args
     print ":::DIAG::: this request.args['username']"
@@ -32,7 +32,7 @@ def authenticate():
     if request.form['username'] != user:
         return render_template("loginstatus.html", TITLE = "Sign in Unsuccessful", SCEPTILE = "Username is erroneous or does not exist.")
     elif request.form['password'] != pin:
-        return render_template("loginstatus.html", TITLE = "Sign in Unsuccessful", SCEPTILE = "Password is erroneous or user does not exist.")
+        return render_template("loginstatus.html", TITLE = "Sign in Unsuccessful", SCEPTILE = "Username or password is erroneous or user does not exist.")
     return request.form['username'] + "\n" + request.form['password']
     
 if __name__ == "__main__":
