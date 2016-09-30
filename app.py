@@ -1,43 +1,40 @@
-from flask import Flask, render_template
-import Divine
-#python can be object oriented
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 #creates instance of Flask and passes env variable __name__
 
 
-prob = Divine.calc()
+
 
 @app.route("/")
 def mainpage():
-    return '''<html>
-              <head>
-              <title>Edmond's Homepage</title>
-              </head>
-              <body>
-              <a href="http://127.0.0.1:5000/Grovyle!">Grovyle!</a><br>
-              <a href="http://127.0.0.1:5000/occupations">Occupations</a><br>
-              </body>
-              </html>
-              '''
+    print "\n\n\n"
+    print ":::DIAG::: this Flask obj"
+    print app
+    print ":::DIAG::: this request obj"
+    print request
+    print ":::DIAG::: this request.headers"
+    print request.headers
+    print ":::DIAG::: this request.method"
+    print request.method
+    print ":::DIAG::: this request.args"
+    print request.args
+    print ":::DIAG::: this request.args['username']"
+    # print request.args['username']
+    print ":::DIAG::: this request.form"
+    print request.form
+    return render_template("triform.html", VARIABLE="Test Form!", TITLE = "LOGIN HERE!")
 
-@app.route("/Grovyle!")
-def grovyle():
-    return '''<html>
-              <head>
-              <title>Grovyle!!!</title>
-              </head>
-              <body>
-              <font size=20px color:green><b>Grov Grovyle!</b></font><br>
-              <a href="http://127.0.0.1:5000/">back</a>
-              </body>
-              </html> '''
-
-@app.route("/occupations")
-def test_tmplt():
-    return render_template("basic.html", GROVYLE = "Job Occupations", fool = prob, SCEPTILE = Divine.randOcc(Divine.calc()))
-            
-
+@app.route("/auth", methods=['POST','GET'])
+def authenticate():
+    user = "GROVYLE"
+    pin = "dex253"
+    if request.form['username'] != user:
+        return render_template("loginstatus.html", TITLE = "Sign in Unsuccessful", SCEPTILE = "Username is erroneous or does not exist.")
+    elif request.form['password'] != pin:
+        return render_template("loginstatus.html", TITLE = "Sign in Unsuccessful", SCEPTILE = "Password is erroneous or user does not exist.")
+    return request.form['username'] + "\n" + request.form['password']
+    
 if __name__ == "__main__":
     app.debug = True
     app.run()
