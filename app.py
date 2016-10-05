@@ -1,39 +1,51 @@
+#Edmond Lam
+#SoftDev1 pd8
+#HW04 -- Big, Heavy, Wood
+#2016-10-02
+
 from flask import Flask, render_template, request
+import hashlib
+import utils.authenticate
 
 app = Flask(__name__)
 #creates instance of Flask and passes env variable __name__
 
 
 
-
 @app.route("/")
 def mainpage():
-    print "\n\n\n"
-    print ":::DIAG::: this Flask obj"
-    print app
-    print ":::DIAG::: this request obj"
-    print request
-    print ":::DIAG::: this request.headers"
-    print request.headers
-    print ":::DIAG::: this request.method"
-    print request.method 
-    print ":::DIAG::: this request.args"
-    print request.args
-    print ":::DIAG::: this request.args['username']"
-    # print request.args['username']
-    print ":::DIAG::: this request.form"
-    print request.form
-    return render_template("triform.html", VARIABLE="Test Form!", TITLE = "LOGIN HERE!")
+    return render_template("triform.html", TAB="Login Page!", TITLE = "LOGIN HERE!")
 
-@app.route("/auth", methods=['POST','GET'])
+
+@app.route("/login", methods=['POST'])
 def authenticate():
-    user = "GROVYLE"
-    pin = "dex253"
-    if request.form['username'] != user:
-        return render_template("loginstatus.html", TITLE = "Sign in Unsuccessful", SCEPTILE = "Username is erroneous or does not exist.")
-    elif request.form['password'] != pin:
-        return render_template("loginstatus.html", TITLE = "Sign in Unsuccessful", SCEPTILE = "Username or password is erroneous or user does not exist.")
-    return request.form['username'] + "\n" + request.form['password']
+    user = request.form['username']
+    pin = request.form['password']
+    shaHash = hashlib.sha1()
+    shaHash.update(pin)
+    pinHash = shaHash.hexdigest()
+    userslist = utils.authenticate.getUsers()
+    print pinHash
+    print userslist[user]
+    if (user in userslist):
+        if (userslist[user] == pinHash):
+            return render_template("triform.html", TITLE = "Success!", alert = " You have successfully logged in!")
+        return render_template("triform.html", TITLE = "Sign in Unsuccessful.", alert = " You have entered an erroneous password or user does not exist!")
+    return render_template("triform.html", TITLE = "Sign in Unsuccessful", alert = "Account does not exist. Please try again.")
+
+@app.route("/register", methods=['POST'])
+def register():
+    print request.form
+    user = request.form["user"]
+    pin = request.form["pass"]
+    shaHash = hashlib.sha1()
+    shaHash.update(pin)
+    passHash = shaHash.hexdigest()
+    userslist = utils.authenticate.getUsers()
+    if (user in userslist):
+        return render_template("triform.html", alert="Username already exists! Please change your username or login to the account you have created already.")
+    utils.authenticate.addUser(user,passHash)
+    return render_template("triform.html", alert="Account created. Login.")
     
 if __name__ == "__main__":
     app.debug = True
