@@ -23,12 +23,12 @@ a:active  {color:#FFFFFF; background-color:transparent; text-decoration:underlin
 </b>
 </font>
 </center>
-<br><br>
+<br>
 <center>
 <p class="titles">
 {{ alert }}
 </p>
-<br><br>
+<br>
 </center>
 <center>
 <form id="loginform" name="input" method="POST" action="/login">
@@ -52,16 +52,15 @@ a:active  {color:#FFFFFF; background-color:transparent; text-decoration:underlin
   <bodyp class="paragraph">Don't have an account? <a>Sign up!</a></bodyp>
 </center>
 <br>
-<br>
 <center>
 <form id="loginform" name="input" method="POST" action="/register">
     <br>
     <br>
 	<br>
-	<input class="forms" type="text" name="username" placeholder=" Username">
+	<input class="forms" type="text" name="user" placeholder=" Username">
     <br>
 	<br>
-	<input class="forms" type="password" name="password" placeholder=" Password">
+	<input class="forms" type="password" name="pass" placeholder=" Password">
 	<br>
 	<br>
     <br>
