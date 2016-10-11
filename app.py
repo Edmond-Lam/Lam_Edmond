@@ -76,7 +76,7 @@ def register():
     shaHash.update(pin)
     passHash = shaHash.hexdigest()
     userslist = utils.authenticate.getUsers()
-    if (user.find(',') or user == '' or pin == '') != -1:
+    if (user.find(',') == -1 or user == '' or pin == ''):
         status['action'] = 'fail3'
         redirect(url_for("mainpage"))
     if (user in userslist):
