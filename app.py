@@ -9,30 +9,37 @@ import hashlib, os, utils.authenticate
 app = Flask(__name__)
 #creates instance of Flask and passes env variable __name__
 
+status = {}
+
+status.clear()
 
 app.secret_key = '\x1fBg\x9d\x0cLl\x12\x9aBb\xcd\x17\xb3/\xe4\xca\xf76!\xee\xf2\xc8?\x85\xdb\xd6;[\xae\xfb\xeb'
 
 @app.route("/")
 def mainpage():
-    #session.clear()
+    print status
     print session
-    if 'action' in session:
-        if session['action'] == 'start':
+    if 'action' in status:
+        if status['action'] == 'start':
             return render_template("triform.html", TAB="Login Page!", TITLE = "LOGIN HERE!")
-        if session['action'] == 'registered':
+        if status['action'] == 'registered':
             return render_template("triform.html", TAB="Login Page!!", TITLE = "LOGIN HERE!", alert = "Account successfully registered. Please log in.")
-        if session['action'] == 'success':
+        if status['action'] == 'success':
             return render_template("home.html", TITLE = "Welcome!", HEAD = "Welcome to your homepage!")
-        if session['action'] == 'fail1':
+        if status['action'] == 'fail1':
             return render_template("triform.html", TITLE = "Sign in Unsuccessful.", TAB="Could not log in.", alert = " You have entered an erroneous password or user does not exist!")
-        if session['action'] == 'fail2':
+        if status['action'] == 'fail2':
             return render_template("triform.html", TITLE = "Register Unsuccessful.", TAB="Could not register.", alert = "Username has been taken already!")
-        if session['action'] == 'fail3':
-            return render_template("triform.html", TITLE = "Register Unsuccessful.", TAB="Could not register.", alert = "Username invalid! Do not use commas!")
-        if session['action'] == 'logout':
+        if status['action'] == 'fail3':
+            return render_template("triform.html", TITLE = "Register Unsuccessful.", TAB="Could not register.", alert = "Username invalid! Do not use commas or leave blank!")
+        if status['action'] == 'logout':
+            session.clear()
+            status.clear()
             return render_template("triform.html", TITLE = "Logged out.", TAB="Login Page!", alert = "You have been logged out.")
     else:
-        session['action']='start'
+        session.clear()
+        status.clear()
+        status['action']='start'
         return redirect(url_for('mainpage'))
 
 @app.route("/jacobo")
@@ -53,12 +60,12 @@ def authenticate():
     if (user in userslist):
         if (userslist[user] == pinHash):
             session[user] = app.secret_key
-            session['action'] = "success"
-            session['username'] = user
+            status['action'] = "success"
+            status['username'] = user
             return redirect(url_for("mainpage"))
-        session['action'] = 'fail1'
+        status['action'] = 'fail1'
         return redirect(url_for("mainpage"))
-    session['action'] = "fail1"
+    status['action'] = "fail1"
     return redirect(url_for("mainpage"))
 
 @app.route("/register", methods=['POST'])
@@ -69,21 +76,21 @@ def register():
     shaHash.update(pin)
     passHash = shaHash.hexdigest()
     userslist = utils.authenticate.getUsers()
-    if (user.find(',')) != -1:
-        session['action'] = 'fail3'
+    if (user.find(',') or user == '' or pin == '') != -1:
+        status['action'] = 'fail3'
         redirect(url_for("mainpage"))
     if (user in userslist):
-        session['action'] = 'fail2'
+        status['action'] = 'fail2'
         return redirect(url_for("mainpage"))
     utils.authenticate.addUser(user,passHash)
-    session['action'] = 'registered'
+    status['action'] = 'registered'
     return redirect(url_for("mainpage"))
 
 @app.route("/logout", methods=['POST'])
 def byebye():
-    session[session['username']] = ''
-    session['username']=''
-    session['action'] = 'logout'
+    session[status['username']] = ''
+    status['username']=''
+    status['action'] = 'logout'
     return redirect(url_for('mainpage'))
     
 if __name__ == "__main__":
