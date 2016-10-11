@@ -88,8 +88,8 @@ def register():
 
 @app.route("/logout", methods=['POST'])
 def byebye():
-    session[status['username']] = ''
-    status['username']=''
+    session.pop(status['username'])
+    status.pop('username')
     status['action'] = 'logout'
     return redirect(url_for('mainpage'))
     
