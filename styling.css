@@ -1,7 +1,10 @@
 
 body{
-	background-color: #6C91C2;
+	background-color: #646F58;
 	background-position:left;
+	font-size: 12pt;
+	margin: 125px;
+	text-align: center;
 }
 
 p[class=titles]{
@@ -9,14 +12,44 @@ p[class=titles]{
 	font-family: 'Abel', sans-serif;
 }
 
-bodyp{
+h1 {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #26231B;
+    font-family: "Quicksand",sans-serif;
+    font-size: 4em;
+}
+
+h2 {
+    font-weight: 600;
+    text-decoration: underline;
+    color: #26231B;
+    font-family: "Quicksand",sans-serif;
+    font-size: 2.25em;
+}
+
+h3 {
+    font-weight: 400;
+    text-decoration: underline;
+    color: #26231B;
+    font-family: "Quicksand",sans-serif;
+    font-size: 1.75em;
+}
+
+
+ul,li{
 	font-family: 'Yanone Kaffeesatz',sans-serif;
-	font-size: 25px
+	font-size: 25px;
+}
+
+ul {
+    list-style-type: none;
 }
 
 bodyp[class=paragraph]{
 	font-family: 'Cuprum',sans-serif;
-	font-size: 25px
+	font-size: 25px;
+	
 }
 
 button[class=login]:hover {
@@ -108,4 +141,27 @@ table, td, tr{
 	border: 0px;
 	border-radius: 15px;
 }
+
+a:link{
+    color:#1F5673; 
+    background-color:transparent; 
+    text-decoration:none
+}
+
+a:visited {
+    color:#808080; 
+    background-color:transparent; 
+    text-decoration:underline;
+}
+
+a:hover   {
+    color:#FFFFFF; 
+    background-color:transparent; 
+    text-decoration:underline;
+
+
+a:active  {
+    color:#FFFFFF; 
+    background-color:transparent; 
+    text-decoration:underline;
 
