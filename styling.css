@@ -13,7 +13,7 @@ p {
     font-weight: bold;
     display: inline-block;
     font-size: 1em;
-    margin: 1em 15em ;
+    margin: 1em 22em ;
     font-family: 'Abel', sans-serif;
 }
 
@@ -51,9 +51,9 @@ li {
 }
 
 ul {
-    text-align: left;
+    text-align: center;
     list-style-position: ;
-    display: inline-block;
+    display: inline;
     list-style-type: none;
 }
 
