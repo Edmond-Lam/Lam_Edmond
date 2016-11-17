@@ -1,49 +1,50 @@
 
 body{
     display: inline-block;
-    background-color: #646F58;
+    background-color: #141301;
     background-position:left;
-    font-size: 12pt;
+    font-size: 15pt;
     margin: 125px;
-    text-align: center;
+    text-align: justify;
+    text-justify: inter-word;
+    color: #AAB5A8;
 }
 
 p {
-    text-align: ;
     font-weight: bold;
     display: inline-block;
     font-size: 1em;
-    margin: 1em 15em;
-    font-family: 'Abel', sans-serif;
+    margin: 1em 20em 0em 0em;
+    font-family: 'Gudea', sans-serif;
 }
 
 h1 {
     font-weight: bold;
     text-decoration: underline;
-    color: #26231B;
-    font-family: "Quicksand",sans-serif;
+    color: #D9E5D6;
+    font-family: "Poiret One",sans-serif;
     font-size: 4em;
 }
 
 h2 {
-    font-weight: 600;
+    font-weight: 650;
     text-decoration: underline;
-    color: #26231B;
-    font-family: "Quicksand",sans-serif;
+    color: #D9E5D6;
+    font-family: "Poiret One",sans-serif;
     font-size: 2.25em;
 }
 
 h3 {
-    font-weight: 450;
-    text-decoration: underline;
-    color: #26231B;
-    font-family: "Quicksand",sans-serif;
-    font-size: 1.75em;
+    font-weight: 550;
+    text-decoration:;
+    color: #D9E5D6;
+    font-family: "Poiret One",sans-serif;
+    font-size: 2em;
 }
 
 
 ul,li{
-    font-family: 'Yanone Kaffeesatz',sans-serif;
+    font-family: "Montserrat Alternates",sans-serif;
     font-size: 25px;
 }
 
@@ -52,9 +53,9 @@ li {
 
 ul {
     text-align: left;
-    list-style-position: ;
+    list-style-position:;
     display: inline-block;
-    list-style-type: none;
+    list-style-type: circle;
 }
 
 a:link{
@@ -75,9 +76,10 @@ a:hover   {
     text-decoration:underline;
 
 }
+
 a:active  {
     color:#FFFFFF; 
     background-color:transparent; 
     text-decoration:underline;
-    
+
 }
