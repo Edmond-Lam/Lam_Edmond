@@ -14,11 +14,21 @@ div {
     padding: 10px;
 }
 
+#grovyle {
+    background-color: #646F58;
+}
+
 div.content {
     margin: 0em 22em;
     background-color: #A9FDAC;
-    border-radius: 15px 50px;
+    border-radius: 0px 0px 15px 15px;
     border: 25px;
+}
+
+div.navzone {
+    margin: 0em 20em;
+    background-color: #A9FDAC;
+    border-radius: 15px 15px 0px 0px;
 }
 
 div.extreme{
@@ -45,7 +55,7 @@ h1 {
     font-weight: bold;
     text-decoration: underline;
     color: #26231B;
-    font-family: "Quicksand",sans-serif;
+    font-family: "Lobster", sans-serif;
     font-size: 4em;
 }
 

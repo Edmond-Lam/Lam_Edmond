@@ -1,0 +1,133 @@
+
+body{
+    display: inline-block;
+    background-color: #141301;
+    background-position:left;
+    font-size: 15pt;
+    margin: 125px;
+    text-align: justify;
+    text-justify: inter-word;
+    color: #AAB5A8;
+}
+
+div {
+    max-width: 1500px;
+    margin: auto;
+    padding: 10px;
+}
+
+#grovyle {
+    transition-property: background-color, color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    background-color: #141301;
+    color: #AAB5A8;
+    border-radius: 15px 15px 15px 15px;
+}
+
+#grovyle:hover {
+    transition-property: background-color, color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    background-color: #4CBF46;
+    color: black;
+    border-radius: 15px 15px 15px 15px;
+}
+
+div.content {
+    margin: 0em 20em 0em 0em;
+    background-color: #204B57;
+    border-radius: 0px 0px 15px 0px;
+    border: 15px;
+}
+
+div.navzone {
+    margin: 0em 20em 0em 0em;
+    background-color: #204B57;
+    border-radius: 15px 15px 0px 0px;
+}
+
+div.extreme{
+    background-color: #204B57;
+    border-radius: 0px 0px 10px 10px;
+    text-align: ;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 1em;
+    margin: auto;
+    font-family: 'Abel', sans-serif;
+}
+
+p {
+    font-weight: bold;
+    display: inline-block;
+    font-size: 1em;
+    margin: 1em 20em 0em 0em;
+    font-family: 'Gudea', sans-serif;
+}
+
+h1 {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #D9E5D6;
+    font-family: "Poiret One",sans-serif;
+    font-size: 4em;
+}
+
+h2 {
+    font-weight: 650;
+    text-decoration: underline;
+    color: #D9E5D6;
+    font-family: "Poiret One",sans-serif;
+    font-size: 2.25em;
+}
+
+h3 {
+    font-weight: 550;
+    text-decoration:;
+    color: #D9E5D6;
+    font-family: "Poiret One",sans-serif;
+    font-size: 2em;
+}
+
+
+ul,li{
+    font-family: "Montserrat Alternates",sans-serif;
+    font-size: 25px;
+}
+
+li {
+}
+
+ul {
+    text-align: left;
+    list-style-position:;
+    display: inline-block;
+    list-style-type: circle;
+}
+
+a:link{
+    color:#1F0673; 
+    background-color:transparent; 
+    text-decoration:none
+}
+
+a:visited {
+    color:#808080; 
+    background-color:transparent; 
+    text-decoration:underline;
+}
+
+a:hover   {
+    color:#FFFFFF; 
+    background-color:transparent; 
+    text-decoration:underline;
+
+}
+
+a:active  {
+    color:#FFFFFF; 
+    background-color:transparent; 
+    text-decoration:underline;
+
+}
