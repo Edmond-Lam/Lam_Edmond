@@ -1,12 +1,52 @@
+@import url('http://fonts.googleapis.com/css?family=Abel|Arvo:400,700,400italic|Poiret+One|Quicksand:400,700|Gudea:400,700|Montserrat+Alternates:400,700|Lobster|Yanone+Kaffeesatz:400,700|Cuprum:400,400italic,700');
+
+@keyframes blink{
+    0%{
+	background-color: #141301;
+    }
+    50%{
+	background-color: #4CBF46;
+    }
+    100%{
+	background-color: #141301;
+    }
+}
+
+@keyframes bblink{
+    0%{
+	background-color: #D58936;
+    }
+    50%{
+	background-color: #A44200;
+    }
+    100%{
+	background-color: #D58936;
+    }
+}
+
+@keyframes cblink{
+    0%{
+	color: #E0FBFC;
+    }
+    50%{
+	color: #253237;
+    }
+    100%{
+	color: #E0FBFC;
+    }
+}
 
 body{
-    display: inline-block;
     background-color: #141301;
     background-position:left;
     font-size: 15pt;
     margin: 125px;
     text-align: justify;
     text-justify: inter-word;
+    color: #E3F2E1
+}
+
+p {
     color: #AAB5A8;
 }
 
@@ -16,7 +56,7 @@ div {
     padding: 10px;
 }
 
-#grovyle {
+#head1 {
     transition-property: background-color, color;
     transition-duration: 0.15s;
     transition-timing-function: ease-in-out;
@@ -25,31 +65,33 @@ div {
     border-radius: 15px 15px 15px 15px;
 }
 
-#grovyle:hover {
+#head1:hover {
     transition-property: background-color, color;
     transition-duration: 0.15s;
     transition-timing-function: ease-in-out;
+    animation: blink 3s linear infinite;
     background-color: #4CBF46;
     color: black;
+    font-family: "Arvo",sans-serif;
     border-radius: 15px 15px 15px 15px;
 }
 
 div.content {
-    margin: 0em 20em 0em 0em;
+    margin: 0em 10em 0em 0em;
     background-color: #204B57;
     border-radius: 0px 0px 15px 0px;
     border: 15px;
 }
 
 div.navzone {
-    margin: 0em 20em 0em 0em;
+    margin: 0em 10em 0em 0em;
     background-color: #204B57;
-    border-radius: 15px 15px 0px 0px;
+    border-radius: 0px 15px 0px 0px;
 }
 
 div.extreme{
     background-color: #204B57;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 0px 0px;
     text-align: ;
     font-weight: bold;
     display: inline-block;
@@ -63,7 +105,7 @@ p {
     display: inline-block;
     font-size: 1em;
     margin: 1em 20em 0em 0em;
-    font-family: 'Gudea', sans-serif;
+    font-family: "Montserrat Alternates", sans-serif;
 }
 
 h1 {
@@ -97,13 +139,42 @@ ul,li{
 }
 
 li {
+    float: left;
 }
 
+li a {
+    display: block;
+    color: white;
+    margin: 0;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    animation: cblink 5s linear infinite;
+}
+
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#tehlulz{
+    animation: bblink 2s linear infinite;
+}
+
+
 ul {
-    text-align: left;
     list-style-position:;
-    display: inline-block;
-    list-style-type: circle;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    background-color: #4381C1;
+    overflow: hidden;
+}
+
+ul:hover {
+
 }
 
 a:link{
@@ -113,7 +184,7 @@ a:link{
 }
 
 a:visited {
-    color:#808080; 
+    color:#E3F2E1;
     background-color:transparent; 
     text-decoration:underline;
 }

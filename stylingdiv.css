@@ -1,3 +1,40 @@
+@import url('http://fonts.googleapis.com/css?family=Abel|Arvo:400,700,400italic|Poiret+One|Quicksand:400,700|Gudea:400,700|Montserrat+Alternates:400,700|Lobster|Yanone+Kaffeesatz:400,700|Cuprum:400,400italic,700');
+
+@keyframes blink{
+    0%{
+	background-color: #646F58;
+    }
+    50%{
+	background-color: #4CBF46;
+    }
+    100%{
+	background-color: #646F58;
+    }
+}
+
+@keyframes bblink{
+    0%{
+	background-color: #D58936;
+    }
+    50%{
+	background-color: #A44200;
+    }
+    100%{
+	background-color: #D58936;
+    }
+}
+
+@keyframes cblink{
+    0%{
+	color: #E0FBFC;
+    }
+    50%{
+	color: #253237;
+    }
+    100%{
+	color: #E0FBFC;
+    }
+}
 
 body{
     display: inline-block;
@@ -14,9 +51,26 @@ div {
     padding: 10px;
 }
 
-#grovyle {
-    background-color: #646F58;
+#head1 {
+    transition-property: background-color, color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    background-color: 646F58;
+    color: #AAB5A8;
+    border-radius: 15px 15px 15px 15px;
 }
+
+#head1:hover {
+    transition-property: background-color, color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    animation: blink 3s linear infinite;
+    background-color: #4CBF46;
+    color: black;
+    font-family: "Arvo",sans-serif;
+    border-radius: 15px 15px 15px 15px;
+}
+
 
 div.content {
     margin: 0em 22em;
@@ -26,14 +80,16 @@ div.content {
 }
 
 div.navzone {
-    margin: 0em 20em;
+    margin: 0em 22em;
     background-color: #A9FDAC;
     border-radius: 15px 15px 0px 0px;
+    position: relative;
+    text-align: center;
 }
 
 div.extreme{
     background-color: #A9FDAC;
-    border-radius: 10px 10px;
+    border-radius: 0px 0px;
     text-align: ;
     font-weight: bold;
     display: inline-block;
@@ -80,15 +136,51 @@ ul,li{
     font-family: 'Yanone Kaffeesatz',sans-serif;
     font-size: 25px;
 }
-
-li {
-}
-
+/*
 ul {
     text-align: center;
     list-style-position: ;
     display: inline;
     list-style-type: none;
+}*/
+
+li {
+    float: center;
+}
+
+li a {
+    display: block;
+    color: white;
+    margin: 0;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    animation: cblink 5s linear infinite;
+}
+
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#tehlulz{
+    animation: bblink 2s linear infinite;
+}
+
+
+ ul {
+    list-style-position:;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    background-color: #4381C1;
+    overflow: hidden;
+}
+
+ul:hover {
+
 }
 
 a:link{
